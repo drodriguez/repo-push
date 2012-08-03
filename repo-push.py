@@ -18,6 +18,6 @@ def _bundle_with_suffix(orig, ui, repo, fname, dest=None, *opts, **kwopts):
 def uisetup(ui):
     extensions.wrapcommand(commands.table, 'push', _outbound_with_suffix)
     extensions.wrapcommand(commands.table, 'outgoing', _outbound_with_suffix)
-    extensions.wrapcommand(commands.table, 'bundle', _outbound_with_suffix)
+    extensions.wrapcommand(commands.table, 'bundle', _bundle_with_suffix)
 
 testedwith = '2.2.3'
